@@ -84,6 +84,16 @@ docker run -p 3001:3000 samanhappy/mcphub
 Open `http://localhost:300x` and log in with your credentials.
 > **Note**: Default credentials are `admin` / `admin123`.
 
+# curl test
+## login and get token
+```bash
+curl -X POST http://127.0.0.1:3004/auth/login   -H "Content-Type: application/json"   -d '{"username":"admin","password":"admin123"}'
+```
+## connect with token
+```bash
+curl -N -H "Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNzQ2ODcxNTg0LCJleHAiOjE3NDY5NTc5ODR9.UDwKvJB_BUJIs1I_jTavLBeIlafjHIuwQ8ld1pP-SbA" http://127.0.0.1:3004/sse
+```
+
 **Dashboard Overview**:
 - Live status of all MCP servers
 - Enable/disable or reconfigure servers
