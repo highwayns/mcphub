@@ -69,17 +69,19 @@ Create a `mcp_settings.json` file to customize your server settings:
 
 **Recommended**: Mount your custom config:
 ```bash
-docker run -p 3000:3000 -v $(pwd)/mcp_settings.json:/app/mcp_settings.json samanhappy/mcphub
+docker run -p 3002:3000 -v $(pwd)/mcp_settings.json:/app/mcp_settings.json samanhappy/mcphub
+docker run -p 3003:3000 -v $(pwd)/mcp_settings_prod.json:/app/mcp_settings.json samanhappy/mcphub
+docker run -p 3004:3000 -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.json samanhappy/mcphub
 ```
 
 or run with default settings:
 ```bash
-docker run -p 3000:3000 samanhappy/mcphub
+docker run -p 3001:3000 samanhappy/mcphub
 ```
 
 ### Access the Dashboard
 
-Open `http://localhost:3000` and log in with your credentials.
+Open `http://localhost:300x` and log in with your credentials.
 > **Note**: Default credentials are `admin` / `admin123`.
 
 **Dashboard Overview**:

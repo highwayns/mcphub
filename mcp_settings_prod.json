@@ -1,0 +1,107 @@
+{
+  "mcpServers": {
+    "aws-kb-retrieval": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3100:3000", "mcp-aws-kb-retrieval-server:local"]
+    },
+    "everart": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3101:3000", "mcp-everart:local"],
+      "env": {
+        "EVERART_API_KEY": "your-everart-api-key"
+      }
+    },
+    "fetch": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3102:3000", "mcp-fetch:local"]
+    },
+    "gdrive": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3103:3000", "mcp-gdrive:local"]
+    },
+    "github": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3104:3000", "mcp-github:local", "auth"]
+    },
+    "google-maps": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3105:3000", "mcp-google-maps:local"],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "your-google-maps-key"
+      }
+    },
+    "postgres": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3106:3000", "mcp-postgres:local", "postgres://your-db-url"]
+    },
+    "redis": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3207:3000", "mcp-redis:local"]  
+    },
+    "sequentialthinking": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3108:3000", "mcp-sequentialthinking:local"]
+    },
+    "slack": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3109:3000", "mcp-slack:local"],
+      "env": {
+        "SLACK_BOT_TOKEN": "your-slack-bot-token",
+        "SLACK_TEAM_ID": "your-slack-team-id"
+      }
+    },
+    "time": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "-p", "3110:3000", "mcp/time"]
+    },
+    "brave-search": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3111:3000", "mcp-brave-search:local"],
+      "env": {
+        "BRAVE_API_KEY": "your-brave-api-key"
+      }
+    },
+    "everything": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3202:3000", "mcp-everything:local"] 
+    },
+    "filesystem": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3113:3000", "mcp-filesystem:local", "/app/data"]
+    },
+    "git": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3204:3000", "mcp-git:local"]  
+    },
+    "gitlab": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3115:3000", "mcp-gitlab:local"],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "your-gitlab-token"
+      }
+    },
+    "memory": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3116:3000", "mcp-memory:local"]
+    },
+    "puppeteer": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3117:3000", "mcp-puppeteer:local"]
+    },
+    "sentry": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3118:3000", "mcp-sentry:local", "--auth-token", "your-sentry-auth-token"]
+    },
+    "sqlite": {
+      "command": "docker",
+      "args": ["run", "--rm", "-p", "3209:3000", "mcp-sqlite:local"]  
+    }
+  },
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2b$10$Vt7krIvjNgyN67LXqly0uOcTpN0LI55cYRbcKC71pUDAP0nJ7RPa.",
+      "isAdmin": true
+    }
+  ]
+}
