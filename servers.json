@@ -1,4 +1,132 @@
 {
+  "erpnext": {
+    "name": "erpnext",
+    "display_name": "ERPNext",
+    "description": "Enterprise Resource Planning system built on Frappe. Includes modules like CRM, Accounting, Inventory, and more.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/frappe/erpnext"
+    },
+    "homepage": "https://erpnext.com",
+    "author": {
+      "name": "Frappe Technologies"
+    },
+    "license": "GPL-3.0",
+    "categories": [
+      "Business Tools",
+      "ERP"
+    ],
+    "tags": [
+      "erp",
+      "crm",
+      "accounting",
+      "inventory",
+      "restapi",
+      "frappe"
+    ],
+    "examples": [
+      {
+        "title": "获取客户列表",
+        "description": "通过 REST API 获取 ERPNext 中的客户信息",
+        "prompt": "erpnext_get_customers with limit 10"
+      },
+      {
+        "title": "创建新客户",
+        "description": "通过 API 创建一个新客户",
+        "prompt": "erpnext_create_customer with name '张三'"
+      }
+    ],
+    "installations": {
+      "docker": {
+        "type": "docker",
+        "command": "docker-compose",
+        "args": [
+          "up",
+          "-d"
+        ],
+        "env": {
+          "ERPNEXT_SITE_NAME": "site1.local",
+          "ERPNEXT_ADMIN_PASSWORD": "admin",
+          "ERPNEXT_API_KEY": "<your_api_key>",
+          "ERPNEXT_API_SECRET": "<your_api_secret>"
+        }
+      }
+    },
+    "arguments": {
+      "ERPNEXT_API_KEY": {
+        "description": "ERPNext 用户的 API Key，用于 token 验证。",
+        "required": true,
+        "example": "apikey_xxx"
+      },
+      "ERPNEXT_API_SECRET": {
+        "description": "ERPNext 用户的 API Secret，用于 token 验证。",
+        "required": true,
+        "example": "apisecret_yyy"
+      }
+    },
+    "tools": [
+      {
+        "name": "erpnext_get_customers",
+        "description": "获取 ERPNext 中的客户列表",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "number",
+              "description": "返回客户数量上限，默认 10"
+            },
+            "fields": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "需要返回的字段"
+            }
+          },
+          "required": []
+        }
+      },
+      {
+        "name": "erpnext_create_customer",
+        "description": "创建一个 ERPNext 客户对象",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "customer_name": {
+              "type": "string",
+              "description": "客户名称"
+            },
+            "customer_group": {
+              "type": "string",
+              "description": "客户分组"
+            },
+            "territory": {
+              "type": "string",
+              "description": "区域"
+            }
+          },
+          "required": ["customer_name"]
+        }
+      },
+      {
+        "name": "erpnext_login",
+        "description": "通过用户名和密码进行登录，获取 session cookie",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "usr": {
+              "type": "string",
+              "description": "用户名"
+            },
+            "pwd": {
+              "type": "string",
+              "description": "密码"
+            }
+          },
+          "required": ["usr", "pwd"]
+        }
+      }
+    ],
+    "is_official": true
+  },
   "firecrawl": {
     "name": "firecrawl",
     "display_name": "Firecrawl",

@@ -33,6 +33,42 @@
         "SLACK_BOT_TOKEN": "your-bot-token",
         "SLACK_TEAM_ID": "your-team-id"
       }
+    },
+    "spotify": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/varunneal/spotify-mcp",
+        "spotify-mcp"
+      ],
+      "env": {
+        "SPOTIFY_CLIENT_ID": "${SPOTIFY_CLIENT_ID}",
+        "SPOTIFY_CLIENT_SECRET": "${SPOTIFY_CLIENT_SECRET}",
+        "SPOTIFY_REDIRECT_URI": "${SPOTIFY_REDIRECT_URI}"
+      }
+    },
+    "google-drive": {
+      "url": "http://localhost:3003/sse"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${USER_FILESYSTEM_DIRECTORY}",
+        "${USER_FILESYSTEM_ALLOWED_DIR}"
+      ],
+      "env": {}
+    },
+    "figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=${FIGMA_API_KEY}",
+        "--stdio"
+      ],
+      "env": {}
     }
   },
   "users": [
