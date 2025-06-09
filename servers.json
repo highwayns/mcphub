@@ -5,7 +5,7 @@
     "description": "Enterprise Resource Planning system built on Frappe. Includes modules like CRM, Accounting, Inventory, and more.",
     "repository": {
       "type": "git",
-      "url": "https://github.com/frappe/erpnext"
+      "url": "https://github.com/frappe/frappe_docker"
     },
     "homepage": "https://erpnext.com",
     "author": {
@@ -39,16 +39,17 @@
     "installations": {
       "docker": {
         "type": "docker",
-        "command": "docker-compose",
+        "command": "docker compose",
         "args": [
+          "-f pwd.yml",
           "up",
           "-d"
         ],
         "env": {
-          "ERPNEXT_SITE_NAME": "site1.local",
+          "ERPNEXT_SITE_NAME": "site1.localhost:8000",
           "ERPNEXT_ADMIN_PASSWORD": "admin",
-          "ERPNEXT_API_KEY": "<your_api_key>",
-          "ERPNEXT_API_SECRET": "<your_api_secret>"
+          "ERPNEXT_API_KEY": "6d56a84dc606fa4",
+          "ERPNEXT_API_SECRET": "ea997f08c126127"
         }
       }
     },
