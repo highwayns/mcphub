@@ -65,6 +65,14 @@ Create a `mcp_settings.json` file to customize your server settings:
 > npx bcryptjs your-password
 > ```
 
+### build docker 
+```
+docker build -t samanhappy/mcphub .
+docker container ls
+docker stop container_id
+docker remove container_name
+
+```
 ### Docker Deployment
 
 **Recommended**: Mount your custom config:
@@ -77,6 +85,7 @@ docker run -p 3004:3000 -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.jso
 or run with default settings:
 ```bash
 docker run -p 3001:3000 samanhappy/mcphub
+docker run -d --name mcphub   -p 3004:3000   -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.json   samanhappy/mcphub
 ```
 
 ### Access the Dashboard
