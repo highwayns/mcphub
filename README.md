@@ -85,7 +85,7 @@ docker run -p 3004:3000 -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.jso
 or run with default settings:
 ```bash
 docker run -p 3001:3000 samanhappy/mcphub
-docker run -d --name mcphub   -p 3004:3000   -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.json   samanhappy/mcphub
+docker run -v /home/tei952/sayama/03.workflow/mcp/erpnext-mcp-server:/mcp/erpnext-mcp-server -d --name mcphub   -p 3004:3000   -v $(pwd)/mcp_settings_origin.json:/app/mcp_settings.json   samanhappy/mcphub
 ```
 
 ### Access the Dashboard
@@ -168,6 +168,7 @@ http://localhost:3000/sse/{server}
 git clone https://github.com/samanhappy/mcphub.git
 cd mcphub
 pnpm install
+pnpm build
 pnpm dev
 ```
 

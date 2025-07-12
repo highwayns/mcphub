@@ -69,6 +69,17 @@
         "--stdio"
       ],
       "env": {}
+    },
+    "erpnext-mcp": {
+      "command": "node",
+      "args": [
+        "/mcp/erpnext-mcp-server/build/index.js"
+      ],
+      "env": {
+        "ERPNEXT_URL": "http://site1.localhost:8000",
+        "ERPNEXT_API_KEY": "94c9529d08c0366",
+        "ERPNEXT_API_SECRET": "062d009546bdc82"
+      }
     }
   },
   "users": [
