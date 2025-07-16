@@ -150,6 +150,16 @@
         "GEMINI_API_KEY": "your-gemini-api-key",
         "BASE_URL": "http://localhost:8500/tools"
       }
+    },
+    "mermaid-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mermaid-mcp-server"
+      ],
+      "env": {
+        "CONTENT_IMAGE_SUPPORTED": "true"
+      }
     }
   },
   "users": [
