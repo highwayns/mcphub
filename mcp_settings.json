@@ -80,6 +80,76 @@
         "ERPNEXT_API_KEY": "94c9529d08c0366",
         "ERPNEXT_API_SECRET": "062d009546bdc82"
       }
+    },
+    "mcp-codex-keeper": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aindreyway/mcp-codex-keeper@latest"
+      ],
+      "env": {
+        "npm_config_cache_max": "1024000000",
+        "NODE_OPTIONS": "--max-old-space-size=256"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "n8n": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anaisbetts/mcp-installer"
+      ],
+      "env": {
+        "N8N_API_URL": "${N8N_API_URL}",
+        "N8N_API_KEY": "${N8N_API_KEY}"
+      }
+    },
+    "github-actions": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "https://github.com/ko1ynnky/github-actions-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "openapi-schema": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-openapi-schema",
+        "${ABSOLUTE_PATH_TO_OPENAPI_YAML}"
+      ],
+      "env": {}
+    },
+    "openapi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "openapi-mcp-server"
+      ],
+      "env": {}
+    },
+    "code-tools-mcp": {
+      "command": "python",
+      "args": [
+        "/home/tei952/sayama/03.workflow/mcp/mcp_code_tools_server/main.py"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "your-openai-api-key",
+        "GEMINI_API_KEY": "your-gemini-api-key",
+        "BASE_URL": "http://localhost:8500/tools"
+      }
     }
   },
   "users": [
